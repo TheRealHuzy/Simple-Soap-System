@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>NWTIS konfiguracija</comment>
+<entry key="server.database">jdbc:hsqldb:hsql://localhost:9001/</entry>
+<entry key="admin.username">SA</entry>
+<entry key="admin.password"></entry>
+<entry key="admin.database">nwtis_g1</entry>
+<entry key="user.username">nwtis_g1</entry>
+<entry key="user.password">nwtis#g1</entry>
+<entry key="user.database">nwtis_g1</entry>
+<entry key="jdbc.mysql">com.mysql.jdbc.Driver</entry>
+<entry key="jdbc.derby">org.apache.derby.jdbc.ClientDriver</entry>
+<entry key="jdbc.hsqldb.hsql">org.hsqldb.jdbcDriver</entry>
+<entry key="LocationIQ.token">pk.779f6433a26050cda793b2504621de3c</entry>
+<entry key="OpenWeatherMap.apikey">116b3ff16a8a9b6d43fb1481d59131e1</entry>
+<entry key="OpenSkyNetwork.korisnik">Ivan_Huzjak</entry>
+<entry key="OpenSkyNetwork.lozinka">IloveNWTIS</entry>
+<entry key="dnevnik.datoteka">NWTiS_dnevnik.txt</entry>
+<entry key="ciklus.vrijeme">300</entry>
+<entry key="ciklus.korekcija">10</entry>
+<entry key="preuzimanje.odmak">3</entry>
+<entry key="preuzimanje.pauza">20</entry>
+<entry key="preuzimanje.od">01.01.2022</entry>
+<entry key="preuzimanje.do">31.12.2022</entry>
+<entry key="preuzimanje.vrijeme">6</entry>
+<entry key="ciklus.spavanje">300</entry>
+</properties>

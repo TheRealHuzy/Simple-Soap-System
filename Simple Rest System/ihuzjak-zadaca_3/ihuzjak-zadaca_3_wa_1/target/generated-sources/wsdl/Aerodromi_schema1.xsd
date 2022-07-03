@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://ws.zadaca_3.ihuzjak.nwtis.foi.org/" xmlns:tns="http://ws.zadaca_3.ihuzjak.nwtis.foi.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="dajAerodromeZaPratiti" type="tns:dajAerodromeZaPratiti"/>
+
+  <xs:element name="dajAerodromeZaPratitiResponse" type="tns:dajAerodromeZaPratitiResponse"/>
+
+  <xs:element name="dajDolaskeAerodoma" type="tns:dajDolaskeAerodoma"/>
+
+  <xs:element name="dajDolaskeAerodomaResponse" type="tns:dajDolaskeAerodomaResponse"/>
+
+  <xs:element name="dajNajbliziAerodrom" type="tns:dajNajbliziAerodrom"/>
+
+  <xs:element name="dajNajbliziAerodromResponse" type="tns:dajNajbliziAerodromResponse"/>
+
+  <xs:element name="dajPolaskeAerodoma" type="tns:dajPolaskeAerodoma"/>
+
+  <xs:element name="dajPolaskeAerodomaResponse" type="tns:dajPolaskeAerodomaResponse"/>
+
+  <xs:element name="dajSveAerodrome" type="tns:dajSveAerodrome"/>
+
+  <xs:element name="dajSveAerodromeResponse" type="tns:dajSveAerodromeResponse"/>
+
+  <xs:element name="dodajAerodromPreuzimanje" type="tns:dodajAerodromPreuzimanje"/>
+
+  <xs:element name="dodajAerodromPreuzimanjeResponse" type="tns:dodajAerodromPreuzimanjeResponse"/>
+
+  <xs:complexType name="dajNajbliziAerodrom">
+    <xs:sequence>
+      <xs:element name="arg0" type="tns:lokacija" minOccurs="0"/>
+      <xs:element name="arg1" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="lokacija">
+    <xs:sequence>
+      <xs:element name="latitude" type="xs:string" minOccurs="0"/>
+      <xs:element name="longitude" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dajNajbliziAerodromResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:aerodrom" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="aerodrom">
+    <xs:sequence>
+      <xs:element name="drzava" type="xs:string" minOccurs="0"/>
+      <xs:element name="icao" type="xs:string" minOccurs="0"/>
+      <xs:element name="lokacija" type="tns:lokacija" minOccurs="0"/>
+      <xs:element name="naziv" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dajDolaskeAerodoma">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dajDolaskeAerodomaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:avionLeti" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="avionLeti">
+    <xs:sequence>
+      <xs:element name="arrivalAirportCandidatesCount" type="xs:int"/>
+      <xs:element name="callsign" type="xs:string" minOccurs="0"/>
+      <xs:element name="departureAirportCandidatesCount" type="xs:int"/>
+      <xs:element name="estArrivalAirport" type="xs:string" minOccurs="0"/>
+      <xs:element name="estArrivalAirportHorizDistance" type="xs:int"/>
+      <xs:element name="estArrivalAirportVertDistance" type="xs:int"/>
+      <xs:element name="estDepartureAirport" type="xs:string" minOccurs="0"/>
+      <xs:element name="estDepartureAirportHorizDistance" type="xs:int"/>
+      <xs:element name="estDepartureAirportVertDistance" type="xs:int"/>
+      <xs:element name="firstSeen" type="xs:int"/>
+      <xs:element name="icao24" type="xs:string" minOccurs="0"/>
+      <xs:element name="lastSeen" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dajAerodromeZaPratiti">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="dajAerodromeZaPratitiResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:aerodrom" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dodajAerodromPreuzimanje">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dodajAerodromPreuzimanjeResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="dajSveAerodrome">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="dajSveAerodromeResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:aerodrom" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dajPolaskeAerodoma">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dajPolaskeAerodomaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:avionLeti" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

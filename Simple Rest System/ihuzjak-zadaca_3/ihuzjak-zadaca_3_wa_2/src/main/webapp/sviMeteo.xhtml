@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Pregled meteo podataka</title>
+	<h:outputStylesheet library="css" name="default.css" />
+</h:head>
+<h:body>
+	<h:link outcome="index.xhtml" value="Početna"/><br/><br/>
+	<h3>Pregled meteo podataka</h3>
+	<h:form method="POST">
+		ICAO: 
+		<h:inputText id="icao2" value="#{MeteoWs.icao}">
+		</h:inputText>
+		<h:commandButton id="submit" value="Daj meteo podatke"/>
+	</h:form>
+	Temp: #{MeteoWs.meteoPodaci.temperatureValue} C<br/>
+	Vlag: #{MeteoWs.meteoPodaci.humidityValue} %<br/>
+    Tlak: #{MeteoWs.meteoPodaci.pressureValue} kpa<br/>
+    Obor: #{MeteoWs.meteoPodaci.precipitationValue} | oborine<br/>
+    Vjet: #{MeteoWs.meteoPodaci.windDirectionName} | smjer<br/>
+</h:body>
+</html>

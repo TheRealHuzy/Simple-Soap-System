@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"    
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Pregled aerodroma</title>
+        <h:outputStylesheet library="css" name="default.css"  /> 
+    </h:head>
+    <h:body>
+    	<h:link outcome="index.xhtml" value="Početna"/><br/><br/>
+        <h2>Pregled aerodroma</h2>
+        <h:dataTable value="#{AerodromiWs.aerodromi}" var="a"
+                     styleClass="authorTable"
+                     headerClass="authorTableHeader"
+                     rowClasses="authorTableOddRow,authorTableEvenRow">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="ICAO" />
+                </f:facet>
+                <h:outputText value="#{a.icao}" />
+            </h:column>  
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Naziv" />
+                </f:facet>
+                <h:outputText value="#{a.naziv}" />
+            </h:column>  
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Država" />
+                </f:facet>
+                <h:outputText value="#{a.drzava}" />
+            </h:column>  
+        </h:dataTable>
+        <br />
+    </h:body>
+</html> 
