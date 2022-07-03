@@ -1,0 +1,2 @@
+OK 75;\n
+Predmet komande               Broj korištenja             Zadnje vrijeme\n
